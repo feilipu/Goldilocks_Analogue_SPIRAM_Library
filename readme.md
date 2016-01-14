@@ -89,6 +89,7 @@ buffer overrun.
 inline uint8_t
 SPIRAM_ringBuffer_IsFull(
 					SPIRAM_ringBuffer_t* const buffer);
+```
 
 Inserts an element into the ring buffer.
 ```
@@ -159,7 +160,7 @@ int8_t testSPIRAM(uint_farptr_t p1, uint16_t p2)
 
   uint_farptr_t FarAddress = p1;
 
-  // write out from the buffer, larger than EEPROM page size, and starting at different addresses.
+  /* write out from the buffer, larger than EEPROM page size, and starting at different addresses. */
   ReturnCode = SPIRAM_write( FarAddress, Buff, p2);    // write out from the buffer filled with random bytes.
 
   if (ReturnCode) {
@@ -167,11 +168,11 @@ int8_t testSPIRAM(uint_farptr_t p1, uint16_t p2)
     return ReturnCode;
   }
 
-  for (uint16_t i = 0; i < p2; ++i) // now for each byte we wrote to the SRAM / EEPROM...
+  for (uint16_t i = 0; i < p2; ++i) // now for each byte we wrote to the SRAM / EEPROM.
   {
     uint8_t read_result;
 
-    // we only need to read one byte, because reading is easy.
+    /* we only need to read one byte, because reading is easy. */
     ReturnCode = SPIRAM_read( &read_result, (FarAddress + i), 1);  // read back each random byte from the SRAM/EEPROM.
 
     if (ReturnCode)
