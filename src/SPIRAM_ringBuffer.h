@@ -313,7 +313,7 @@ SPIRAM_ringBuffer_Poke(SPIRAM_ringBuffer_t* buffer, uint8_t const data)
 uint8_t
 SPIRAM_ringBuffer_Pop(SPIRAM_ringBuffer_t* buffer)
 {
-  uint8_t data;
+  uint8_t data = 0;
 
   GCC_FORCE_POINTER_ACCESS(buffer);
 
@@ -333,7 +333,7 @@ SPIRAM_ringBuffer_Pop(SPIRAM_ringBuffer_t* buffer)
 uint8_t
 SPIRAM_ringBuffer_Peek(SPIRAM_ringBuffer_t* const buffer)
 {
-  uint8_t data;
+  uint8_t data = 0;
 
   SPIRAM_read( (uint8_t* const)&data, buffer->out, 1);
 
