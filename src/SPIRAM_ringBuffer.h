@@ -335,7 +335,7 @@ SPIRAM_ringBuffer_Peek(SPIRAM_ringBuffer_t* const buffer)
 {
   uint8_t data;
 
-  SPIRAM_read( &data, buffer->out, 1);
+  SPIRAM_read( (uint8_t* const)&data, buffer->out, 1);
 
   return data;
 }
