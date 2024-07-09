@@ -83,18 +83,17 @@
 #ifndef __SPIRAM_RING_BUFFER_H__
 #define __SPIRAM_RING_BUFFER_H__
 
-
-/* Enable C linkage for C++ Compilers: */
-#if defined(__cplusplus)
-extern "C" {
-#endif
-
 #include <inttypes.h>
 #include <util/atomic.h>
 
 #include "ringBuffer.h"
 
 #include "SPIRAM.h" // includes definition of 32 bit pointer substitute addr_farptr_t
+
+/* Enable C linkage for C++ Compilers: */
+#if defined(__cplusplus)
+extern "C" {
+#endif
 
 /************************** Type Defines: ***************************/
 
